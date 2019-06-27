@@ -58,7 +58,7 @@ public class LoginPanel extends JPanel
 
                 if(correctCredentials())
                 {
-                    Main.grantAccess();
+                    MainRun.grantAccess();
                 }
                 else{
                     JOptionPane.showMessageDialog(new JFrame(), "Incorrect credentials! Please try again.", "Error!",JOptionPane.ERROR_MESSAGE);

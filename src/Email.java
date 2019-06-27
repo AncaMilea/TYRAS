@@ -11,6 +11,7 @@ import javax.mail.*;
 import javax.mail.Folder;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.search.SearchTerm;
+import javax.swing.plaf.nimbus.State;
 
 public class Email implements Action {
 

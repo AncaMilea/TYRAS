@@ -33,7 +33,6 @@ public class EmailFrame{
         window.setVisible(true);
         window.setResizable(false);
         window.setPreferredSize(new Dimension(900,700));
-        window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         window.pack();
 
 
