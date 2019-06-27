@@ -174,8 +174,13 @@ public class EmailFrame{
     public JPanel openAttachment(){
 
         JPanel choose = new JPanel();
-        JFileChooser path = new JFileChooser();
-        choose.add(path);
+        JLabel label = new JLabel();
+        JRadioButton excelAttachment = new JRadioButton();
+        excelAttachment.setIcon(new ImageIcon("excel.png"));
+        choose.add(excelAttachment);
+        choose.add(new JLabel("Imported attachment from previous action..."));
+        //JFileChooser path = new JFileChooser();
+        //choose.add(path);
 
         return choose;
     }

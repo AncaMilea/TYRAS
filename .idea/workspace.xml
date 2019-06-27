@@ -3,14 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ba060451-7683-49cb-85f4-bb383fe7e9ea" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TYRAS/DecisionTreePanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TYRAS/DecisionTreePanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TYRAS/DecisionTreePanel$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TYRAS/DecisionTreePanel$2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TYRAS/DecisionTreePanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TYRAS/DecisionTreePanel$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TYRAS/DecisionTreePanel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TYRAS/DecisionTreePanel$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TYRAS/DecisionTreePanel$Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TYRAS/DecisionTreePanel$Position.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TYRAS/DecisionTreePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TYRAS/DecisionTreePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DecisionTreePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DecisionTreePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Email.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TYRAS/EmailFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TYRAS/EmailFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EmailFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EmailFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ExcelFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ExcelFrame.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,8 +38,8 @@
       <file leaf-file-name="EmailFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/EmailFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="322">
+              <caret line="180" column="78" selection-start-line="180" selection-start-column="78" selection-end-line="180" selection-end-column="78" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2780#2781#0" expanded="true" />
@@ -57,17 +52,17 @@
       <file leaf-file-name="Email.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Email.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+            <state relative-caret-position="204">
+              <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DecisionTreePanel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DecisionTreePanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DecisionTreePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+            <state relative-caret-position="305">
+              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
             </state>
           </provider>
         </entry>
@@ -75,8 +70,8 @@
       <file leaf-file-name="Hub.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Hub.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+            <state relative-caret-position="85">
+              <caret line="5" column="2" lean-forward="true" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -99,20 +94,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="48" column="51" selection-start-line="48" selection-start-column="51" selection-end-line="48" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Excel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Excel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret column="13" selection-start-column="13" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExcelFrame.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ExcelFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="169">
+              <caret line="21" column="60" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -129,6 +124,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>emailAction</find>
+      <find>openAtta</find>
+      <find>openA</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -141,12 +138,13 @@
         <option value="$PROJECT_DIR$/src/MainRun.java" />
         <option value="$PROJECT_DIR$/src/AppPanel.java" />
         <option value="$PROJECT_DIR$/src/LoginPanel.java" />
-        <option value="$PROJECT_DIR$/src/Hub.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/State.java" />
-        <option value="$PROJECT_DIR$/src/EmailFrame.java" />
-        <option value="$PROJECT_DIR$/src/Email.java" />
         <option value="$PROJECT_DIR$/src/DecisionTreePanel.java" />
+        <option value="$PROJECT_DIR$/src/Email.java" />
+        <option value="$PROJECT_DIR$/src/Hub.java" />
+        <option value="$PROJECT_DIR$/src/EmailFrame.java" />
+        <option value="$PROJECT_DIR$/src/ExcelFrame.java" />
       </list>
     </option>
   </component>
@@ -171,6 +169,15 @@
               <item name="TYRAS" type="b2602c69:ProjectViewProjectNode" />
               <item name="TYRAS" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TYRAS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="TYRAS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 12 &gt;" type="70bed36:NamedLibraryElementNode" />
             </path>
           </expand>
           <select />
@@ -360,13 +367,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ExcelFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MainRun.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -393,13 +393,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Hub.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -421,15 +414,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EmailFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/Email.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2780#2781#0" expanded="true" />
-            <element signature="e#2836#2837#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="204">
+          <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DecisionTreePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Hub.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="2" lean-forward="true" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -440,17 +442,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Email.java">
+    <entry file="file://$PROJECT_DIR$/src/EmailFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+        <state relative-caret-position="322">
+          <caret line="180" column="78" selection-start-line="180" selection-start-column="78" selection-end-line="180" selection-end-column="78" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2780#2781#0" expanded="true" />
+            <element signature="e#2836#2837#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DecisionTreePanel.java">
+    <entry file="file://$PROJECT_DIR$/src/ExcelFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+        <state relative-caret-position="169">
+          <caret line="21" column="60" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
         </state>
       </provider>
     </entry>
@@ -471,7 +478,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>No facets are configured</last-edited>
+          <last-edited />
           <splitter-proportions>
             <option name="proportions">
               <list>

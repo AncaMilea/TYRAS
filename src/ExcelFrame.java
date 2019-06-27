@@ -18,8 +18,8 @@ public class ExcelFrame extends JFrame
     private JTextField lineDelField = new JTextField(15);
 
     private JRadioButton filterButton = new JRadioButton("Filter");
-    private JLabel columnFilter = new JLabel("Filter Column condition: ");
-    private JLabel lineFilter = new JLabel("Delete Line(s): ");
+    private JLabel columnFilter = new JLabel("Filter column: ");
+    private JLabel lineFilter = new JLabel("Filter parameter: ");
     private JTextField columnFilterF = new JTextField(15);
     private JTextField lineFilterF = new JTextField(15);
 
