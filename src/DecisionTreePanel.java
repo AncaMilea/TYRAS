@@ -4,12 +4,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.http.WebSocket;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 public class DecisionTreePanel extends JPanel
 {
     private JLabel initialMessage = new JLabel("Chosen actions will appear here...");
     private JButton addActionB = new JButton("Add Action");
     private JButton addBranchAction = new JButton("Add Branch");
+    private JButton start = new JButton("Start automation");
     private JPanel decisionPanel = new JPanel();
     private JRadioButton[][] decisionTree = new JRadioButton[10][10];
     private int branches = 1;
@@ -26,6 +29,7 @@ public class DecisionTreePanel extends JPanel
         buttonsP.setLayout(new FlowLayout());
         buttonsP.add(addActionB);
         buttonsP.add(addBranchAction);
+        buttonsP.add(start);
 
         decisionPanel.add(initialMessage);
 
@@ -41,15 +45,24 @@ public class DecisionTreePanel extends JPanel
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                    JRadioButton action = new JRadioButton("here3",generateBlankAction());
+                    JRadioButton action = new JRadioButton(generateBlankAction());
+                    buttPos.put(action, new Position(currentBranch, currentAction));
                     action.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
-                            setSelected(buttPos.get(action).getRow(), buttPos.get(action).getCol());
-                            System.out.println("Selected is: " + buttPos.get(action).getRow()+ " " + buttPos.get(action).getCol());
+                            if(buttPos.get(action)==null)
+                            {
+                                System.out.println("Button is not in the array");
+                            }
+                            else {
+                                setSelected(buttPos.get(action).getRow(), buttPos.get(action).getCol());
+                                System.out.println("Selected is: " + buttPos.get(action).getRow() + " " + buttPos.get(action).getCol());
+                                action.setBackground(Color.gray);
+                                resetOtherBackgrounds();
+                            }
                         }
                     });
-                    buttPos.put(action, new Position(currentBranch, currentAction));
+
 
                     decisionTree[currentBranch][currentAction] = action;
                     currentAction++;
@@ -68,15 +81,17 @@ public class DecisionTreePanel extends JPanel
                 currentBranch++;
                 currentAction++;
 
-                JRadioButton action1 = new JRadioButton("here 1",generateDownArrowImg());
+                JRadioButton action1 = new JRadioButton(generateDownArrowImg());
 
 
-                JRadioButton action2 = new JRadioButton("here 2",generateBlankAction());
+                JRadioButton action2 = new JRadioButton(generateBlankAction());
                 action2.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         setSelected(buttPos.get(action2).getRow(), buttPos.get(action2).getCol());
                         System.out.println("Selected is: " + buttPos.get(action2).getRow()+ " " + buttPos.get(action2).getCol());
+                        action2.setBackground(Color.gray);
+                        resetOtherBackgrounds();
                     }
                 });
 
@@ -90,6 +105,29 @@ public class DecisionTreePanel extends JPanel
                 drawDecisionTree();
             }
         });
+
+        start.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //start automation
+                JOptionPane.showMessageDialog(new JFrame(), "Automation process has started.");
+            }
+        });
+    }
+
+    private void resetOtherBackgrounds()
+    {
+        Iterator it = buttPos.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry<JRadioButton, Position> pair = (Map.Entry)it.next();
+
+            if(!(pair.getValue().row==selectedRow && pair.getValue().col == selectedCol))
+            {
+                System.out.println("reseting a background");
+                pair.getKey().setBackground(this.getBackground());
+            }
+
+        }
     }
 
     private void drawDecisionTree(){
@@ -104,7 +142,6 @@ public class DecisionTreePanel extends JPanel
             row.setLayout(new FlowLayout());
             for(int j = 0; j<maxActions; j++)
             {
-                System.out.println("drawing row "+maxActions);
                 JLabel right_arrowLabel = new JLabel();
                 right_arrowLabel.setIcon(generateRightArrowImg());
 
@@ -118,7 +155,6 @@ public class DecisionTreePanel extends JPanel
                     if(j!=0) {
                         JLabel emptyImgLabel = new JLabel();
                         emptyImgLabel.setIcon(generateEmptyLabel());
-                        System.out.println("drawing down empty");
                         row.add(emptyImgLabel);
                     }
                 }
@@ -209,6 +245,67 @@ public class DecisionTreePanel extends JPanel
     public void setSelected(int row, int col){
         selectedRow = row;
         selectedCol = col;
+    }
+
+    public void setEmailAction()
+    {
+        int row = selectedRow;
+        int col = selectedCol;
+
+        Iterator it = buttPos.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry<JRadioButton, Position> pair = (Map.Entry)it.next();
+
+
+            if(pair.getValue().row==row && pair.getValue().col == col)
+                pair.getKey().setIcon(generateEmailAction());
+
+        }
+    }
+
+    public void setFileAction()
+    {
+        int row = selectedRow;
+        int col = selectedCol;
+
+        Iterator it = buttPos.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry<JRadioButton, Position> pair = (Map.Entry)it.next();
+            System.out.println(pair.getKey() + " = " + pair.getValue());
+
+            if(pair.getValue().row==row && pair.getValue().col == col)
+                pair.getKey().setIcon(generateFileAction());
+        }
+    }
+
+    public void setCosmicAction()
+    {
+        int row = selectedRow;
+        int col = selectedCol;
+
+        Iterator it = buttPos.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry<JRadioButton, Position> pair = (Map.Entry)it.next();
+            System.out.println(pair.getKey() + " = " + pair.getValue());
+
+            if(pair.getValue().row==row && pair.getValue().col == col)
+                pair.getKey().setIcon(generateCosmicAction());
+        }
+    }
+
+    public void setExcelAction()
+    {
+        int row = selectedRow;
+        int col = selectedCol;
+
+        Iterator it = buttPos.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry<JRadioButton, Position> pair = (Map.Entry)it.next();
+            System.out.println(pair.getKey() + " = " + pair.getValue());
+
+            if(pair.getValue().row==row && pair.getValue().col == col)
+                pair.getKey().setIcon(generateExcelAction());
+        }
     }
 
     class Position{

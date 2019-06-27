@@ -35,7 +35,7 @@ public class Main
                     e.printStackTrace();
                 }
                 window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-                window.pack();
+                window.setSize(new Dimension(800,800));
                 window.setLocationRelativeTo(null);
             }
         });
@@ -43,7 +43,6 @@ public class Main
 
     public static void main(String[] args){
         new Main();
-
     }
 
     public static void grantAccess()
