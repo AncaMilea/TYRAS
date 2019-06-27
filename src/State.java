@@ -1,3 +1,5 @@
+import org.apache.poi.ss.usermodel.Workbook;
+
 import javax.mail.BodyPart;
 import javax.mail.Message;
 import javax.mail.Session;
@@ -10,9 +12,10 @@ public class State {
     private String password;
     private List<String> parameters;
     private String error;
-    private Store mailSession;
+    private Session mailSession;
     private Message[] messages;
-
+    private Store mailStore;
+    private Workbook excelPage;
     private MimeBodyPart attachment;
 
     public State(String SID, String password) {
@@ -21,11 +24,11 @@ public class State {
     }
 
     public Store getMailStore() {
-        return mailSession;
+        return mailStore;
     }
 
-    public void setMailStore(Store mailSession) {
-        this.mailSession = mailSession;
+    public void setMailStore(Store mailStore) {
+        this.mailStore = mailStore;
     }
 
     public String getError() {
@@ -68,11 +71,11 @@ public class State {
         this.messages = messages;
     }
 
-    public Store getMailSession() {
+    public Session getMailSession() {
         return mailSession;
     }
 
-    public void setMailSession(Store mailSession) {
+    public void setMailSession(Session mailSession) {
         this.mailSession = mailSession;
     }
 
@@ -83,4 +86,14 @@ public class State {
     public void setAttachment(MimeBodyPart attachment) {
         this.attachment = attachment;
     }
+
+
+    public Workbook getExcelPage() {
+        return excelPage;
+    }
+
+    public void setExcelPage(Workbook excelPage) {
+        this.excelPage = excelPage;
+    }
+
 }

@@ -1,18 +1,21 @@
-import org.apache.commons.lang3.StringUtils;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+import javax.activation.DataHandler;
+import javax.activation.DataSource;
+import javax.activation.FileDataSource;
 import javax.mail.*;
 import javax.mail.Folder;
+import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 import javax.mail.search.SearchTerm;
 
-public class Email implements Action {
+public class Email {
 
     private State state;
 
@@ -24,6 +27,7 @@ public class Email implements Action {
         Properties props = new Properties();
         props.setProperty("mail.imap.ssl.enable", "true");
         Session mailSession = Session.getInstance(props);
+        state.setMailSession(mailSession);
         mailSession.setDebug(true);
         try {
             Store mailStore = mailSession.getStore("imap");
@@ -123,6 +127,33 @@ public class Email implements Action {
     }
 
     public boolean sendEmail() {
+        try {
+            Message message = new MimeMessage(Session.getInstance(System.getProperties()));
+            message.setFrom(new InternetAddress("hackertyras@outlook.com"));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("hackertyras@outlook.com"));
+            message.setSubject("test");
+            // create the message part
+            MimeBodyPart content = new MimeBodyPart();
+            // fill message
+            content.setText("test");
+            Multipart multipart = new MimeMultipart();
+            multipart.addBodyPart(content);
+            // add attachments
+                MimeBodyPart attachment = new MimeBodyPart();
+                DataSource source = new FileDataSource("."+File.separator+"example.xlsx");
+                attachment.setDataHandler(new DataHandler(source));
+                attachment.setFileName("example.xlsx");
+                multipart.addBodyPart(attachment);
+            // integration
+            message.setContent(multipart);
+            // store file
+            message.writeTo(new FileOutputStream(new File("."+File.separator+"test.eml")));
+        } catch (MessagingException ex) {
+            ex.printStackTrace();
+        } catch (IOException ex) {
+           ex.printStackTrace();;
+        }
+
 
         return false;
     }

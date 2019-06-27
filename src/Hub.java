@@ -14,14 +14,18 @@ public class Hub {
         this.SID = SID;
         this.password = password;
 
+
+
         int i;
+        Email email ;
+        Excel excel ;
         for (i = 0; i < actions.size(); i++) {
 
             switch (actions.get(i).getFunction()) {
                 case OpenEmail:
                     state.setParameters(actions.get(i).getParameters());
                     System.out.println("Opening Email");
-                    Email email = new Email(state);
+                    email = new Email(state);
                     if (!email.openEmail()) {
                         System.out.println(state.getError());
                     }
@@ -62,16 +66,36 @@ public class Hub {
                     }
                     break;
                 case SelectExcel:
-                    System.out.println("Email case accessed");
+                    state.setParameters(actions.get(i).getParameters());
+                    System.out.println("Selecting Excel Data");
+                    excel = new Excel(state);
+                    if (!excel.selectExcel()) {
+                        System.out.println(state.getError());
+                    }
                     break;
                 case DeleteExcel:
-                    System.out.println("Excel case accessed");
+                    state.setParameters(actions.get(i).getParameters());
+                    System.out.println("Deleting Excel Data");
+                    excel = new Excel(state);
+                    if (!excel.deleteExcel()) {
+                        System.out.println(state.getError());
+                    }
                     break;
                 case FilterExcel:
-                    System.out.println("Folder case accessed");
+                    state.setParameters(actions.get(i).getParameters());
+                    System.out.println("Filtering Excel Data");
+                    excel = new Excel(state);
+                    if (!excel.filterExcel()) {
+                        System.out.println(state.getError());
+                    }
                     break;
                 case SaveExcel:
-                    System.out.println("Folder case accessed");
+                    state.setParameters(actions.get(i).getParameters());
+                    System.out.println("Saving Excel Data");
+                    excel = new Excel(state);
+                    if (!excel.saveExcel()) {
+                        System.out.println(state.getError());
+                    }
                     break;
 
                 default:
