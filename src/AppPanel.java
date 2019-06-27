@@ -46,6 +46,8 @@ public class AppPanel extends JPanel
             @Override
             public void actionPerformed(ActionEvent e) {
                 //show popup
+                Email email = new Email();
+
 
                 //set visual
                 decisionTreePanel.setEmailAction();

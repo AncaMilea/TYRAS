@@ -4,7 +4,7 @@ import java.awt.*;
 import java.io.IOException;
 import java.util.MissingFormatArgumentException;
 
-public class Main
+public class MainRun
 {
     static JFrame window = new JFrame();
     static LoginPanel loginPanel ;
@@ -12,7 +12,7 @@ public class Main
     static JPanel content;
 
 
-    public Main() {
+    public MainRun() {
         EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -42,7 +42,7 @@ public class Main
     }
 
     public static void main(String[] args){
-        new Main();
+        new MainRun();
     }
 
     public static void grantAccess()
