@@ -60,6 +60,9 @@ public class LoginPanel extends JPanel
                 {
                     Main.grantAccess();
                 }
+                else{
+                    JOptionPane.showMessageDialog(new JFrame(), "Incorrect credentials! Please try again.", "Error!",JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
         button.add(loginB);
@@ -71,7 +74,13 @@ public class LoginPanel extends JPanel
     }
 
     private boolean correctCredentials() {
-        return true;
+        boolean toReturn = true;
+
+        if(usernameField.getText().equals(""))
+            toReturn = false;
+        if(passwordField.getPassword().length==0)
+            toReturn = false;
+        return toReturn;
     }
 
 
