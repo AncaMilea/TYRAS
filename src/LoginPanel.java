@@ -2,6 +2,8 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -50,12 +52,35 @@ public class LoginPanel extends JPanel
         jP.add(passwordField);
 
         JPanel button = new JPanel();
+        loginB.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                if(correctCredentials())
+                {
+                    Main.grantAccess();
+                }
+                else{
+                    JOptionPane.showMessageDialog(new JFrame(), "Incorrect credentials! Please try again.", "Error!",JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
         button.add(loginB);
         jP.add(button);
 
         mainP.add(title,BorderLayout.NORTH);
         mainP.add(jP,BorderLayout.SOUTH);
 
+    }
+
+    private boolean correctCredentials() {
+        boolean toReturn = true;
+
+        if(usernameField.getText().equals(""))
+            toReturn = false;
+        if(passwordField.getPassword().length==0)
+            toReturn = false;
+        return toReturn;
     }
 
 
