@@ -6,7 +6,7 @@ import java.security.BasicPermission;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class Email {
+public class EmailFrame{
 
     JButton search;
     JButton open ;
@@ -17,7 +17,7 @@ public class Email {
     JPanel emailP;
     JFrame window;
 
-    public Email(){
+    public EmailFrame(){
 
         search = new JButton("Search for E-mail");
         open = new JButton("Open Attachement");
@@ -108,7 +108,7 @@ public class Email {
     }
 
     public static void main(String[] args){
-        new Email();
+        new EmailFrame();
 
     }
 
