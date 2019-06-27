@@ -36,20 +36,12 @@ public class DecisionTreePanel extends JPanel
         addActionB.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(currentAction == 0 && currentBranch == 0)
-                {
-                    decisionTree[0][0] = new JRadioButton(generateBlankAction());
 
-                    maxActions++;
-                    currentAction++;
-                    System.out.println("Adding the first blank action");
-                }
-                else{
-                    currentAction++;
                     decisionTree[currentBranch][currentAction] = new JRadioButton("here3",generateBlankAction());
+                    currentAction++;
                     if(currentAction>maxActions)
                         maxActions = currentAction;
-                }
+
 
                 drawDecisionTree();
             }
@@ -84,7 +76,7 @@ public class DecisionTreePanel extends JPanel
             row.setLayout(new FlowLayout());
             for(int j = 0; j<maxActions; j++)
             {
-                System.out.println("drawing row");
+                System.out.println("drawing row "+maxActions);
                 JLabel right_arrowLabel = new JLabel();
                 right_arrowLabel.setIcon(generateRightArrowImg());
 
@@ -95,10 +87,12 @@ public class DecisionTreePanel extends JPanel
                     row.add(decisionTree[i][j]);
                 }
                 else{
-                    JLabel emptyImgLabel = new JLabel();
-                    emptyImgLabel.setIcon(generateEmptyLabel());
-                    System.out.println("drawing down empty");
-                    row.add(emptyImgLabel);
+                    if(j!=0) {
+                        JLabel emptyImgLabel = new JLabel();
+                        emptyImgLabel.setIcon(generateEmptyLabel());
+                        System.out.println("drawing down empty");
+                        row.add(emptyImgLabel);
+                    }
                 }
             }
 
