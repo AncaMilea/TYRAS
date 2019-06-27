@@ -63,8 +63,8 @@ public class DecisionTreePanel extends JPanel
                         }
                     });
 
-
                     decisionTree[currentBranch][currentAction] = action;
+
                     currentAction++;
                     if(currentAction>maxActions)
                         maxActions = currentAction;
@@ -97,8 +97,9 @@ public class DecisionTreePanel extends JPanel
 
                 buttPos.put(action2, new Position(currentBranch, currentAction));
 
-                decisionTree[currentBranch][currentAction-1] = action1;
-                decisionTree[currentBranch][currentAction] = action2;
+
+                    decisionTree[currentBranch][currentAction - 1] = action1;
+                    decisionTree[currentBranch][currentAction] = action2;
 
                 if(currentAction>maxActions)
                     maxActions = currentAction;
