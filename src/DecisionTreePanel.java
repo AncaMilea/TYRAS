@@ -9,7 +9,7 @@ public class DecisionTreePanel extends JPanel
     private JButton addActionB = new JButton("Add Action");
     private JButton addBranchAction = new JButton("Add Branch");
     private JPanel decisionPanel = new JPanel();
-    private JLabel[][] decisionTree = new JLabel[10][10];
+    private JRadioButton[][] decisionTree = new JRadioButton[10][10];
     private int branches = 1;
     private int currentBranch = 0;
     private int currentAction = 0;
@@ -38,7 +38,7 @@ public class DecisionTreePanel extends JPanel
             public void actionPerformed(ActionEvent e) {
                 if(currentAction == 0 && currentBranch == 0)
                 {
-                    decisionTree[0][0] = new JLabel(generateBlankAction());
+                    decisionTree[0][0] = new JRadioButton(generateBlankAction());
 
                     maxActions++;
                     currentAction++;
@@ -46,7 +46,7 @@ public class DecisionTreePanel extends JPanel
                 }
                 else{
                     currentAction++;
-                    decisionTree[currentBranch][currentAction] = new JLabel(generateBlankAction());
+                    decisionTree[currentBranch][currentAction] = new JRadioButton("here3",generateBlankAction());
                     if(currentAction>maxActions)
                         maxActions = currentAction;
                 }
@@ -62,11 +62,12 @@ public class DecisionTreePanel extends JPanel
                 currentBranch++;
 
                 currentAction++;
-                decisionTree[currentBranch][currentAction-1] = new JLabel(generateDownArrowImg());
-                decisionTree[currentBranch][currentAction] = new JLabel(generateBlankAction());
+                decisionTree[currentBranch][currentAction-1] = new JRadioButton("here 1",generateDownArrowImg());
+                decisionTree[currentBranch][currentAction] = new JRadioButton("here 2",generateBlankAction());
 
                 if(currentAction>maxActions)
                     maxActions = currentAction;
+                drawDecisionTree();
             }
         });
     }
@@ -90,15 +91,19 @@ public class DecisionTreePanel extends JPanel
                 if(decisionTree[i][j]!=null) {
                     if (j != 0)
                         row.add(right_arrowLabel);
+
                     row.add(decisionTree[i][j]);
                 }
                 else{
                     JLabel emptyImgLabel = new JLabel();
                     emptyImgLabel.setIcon(generateEmptyLabel());
                     System.out.println("drawing down empty");
-                    decisionPanel.add(emptyImgLabel);
+                    row.add(emptyImgLabel);
                 }
             }
+
+
+
             decisionPanel.add(row);
             decisionPanel.revalidate();
             decisionPanel.repaint();
@@ -175,5 +180,7 @@ public class DecisionTreePanel extends JPanel
             e.printStackTrace();
             return null;
         }
+
+
     }
 }
