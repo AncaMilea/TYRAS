@@ -8,6 +8,7 @@ public class LoginPanel extends JPanel
     private JLabel userLabel;
     private JLabel passwordLabel;
     private JButton loginB;
+    private JPanel mainP;
 
     public LoginPanel()
     {
@@ -16,5 +17,9 @@ public class LoginPanel extends JPanel
         passwordField = new JPasswordField(15);
         userLabel = new JLabel("ID: ");
         passwordLabel = new JLabel("Pass:");
+        loginB = new JButton("login");
+        mainP = new JPanel();
     }
+
+
 }
