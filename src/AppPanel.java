@@ -46,7 +46,7 @@ public class AppPanel extends JPanel
             @Override
             public void actionPerformed(ActionEvent e) {
                 //show popup
-                Email email = new Email();
+                EmailFrame email = new EmailFrame();
 
 
                 //set visual
