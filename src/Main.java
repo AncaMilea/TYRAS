@@ -8,7 +8,8 @@ public class Main
 
     public static void main(String[] args){
         window.setVisible(true);
-        window.setContentPane(loginPanel);
+        window.setContentPane(appPanel);
+        window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         window.pack();
 
 
