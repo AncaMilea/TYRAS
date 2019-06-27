@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.http.WebSocket;
+import java.util.HashMap;
 
 public class DecisionTreePanel extends JPanel
 {
@@ -15,7 +17,9 @@ public class DecisionTreePanel extends JPanel
     private int currentAction = 0;
     private int maxActions = 0;
     private JPanel buttonsP = new JPanel();
-
+    private int selectedCol;
+    private int selectedRow;
+    private HashMap<JRadioButton, Position> buttPos = new HashMap<>();
 
     public DecisionTreePanel(){
         buttonsP = new JPanel();
@@ -37,7 +41,17 @@ public class DecisionTreePanel extends JPanel
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                    decisionTree[currentBranch][currentAction] = new JRadioButton("here3",generateBlankAction());
+                    JRadioButton action = new JRadioButton("here3",generateBlankAction());
+                    action.addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            setSelected(buttPos.get(action).getRow(), buttPos.get(action).getCol());
+                            System.out.println("Selected is: " + buttPos.get(action).getRow()+ " " + buttPos.get(action).getCol());
+                        }
+                    });
+                    buttPos.put(action, new Position(currentBranch, currentAction));
+
+                    decisionTree[currentBranch][currentAction] = action;
                     currentAction++;
                     if(currentAction>maxActions)
                         maxActions = currentAction;
@@ -52,10 +66,24 @@ public class DecisionTreePanel extends JPanel
             public void actionPerformed(ActionEvent e) {
                 branches++;
                 currentBranch++;
-
                 currentAction++;
-                decisionTree[currentBranch][currentAction-1] = new JRadioButton("here 1",generateDownArrowImg());
-                decisionTree[currentBranch][currentAction] = new JRadioButton("here 2",generateBlankAction());
+
+                JRadioButton action1 = new JRadioButton("here 1",generateDownArrowImg());
+
+
+                JRadioButton action2 = new JRadioButton("here 2",generateBlankAction());
+                action2.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        setSelected(buttPos.get(action2).getRow(), buttPos.get(action2).getCol());
+                        System.out.println("Selected is: " + buttPos.get(action2).getRow()+ " " + buttPos.get(action2).getCol());
+                    }
+                });
+
+                buttPos.put(action2, new Position(currentBranch, currentAction));
+
+                decisionTree[currentBranch][currentAction-1] = action1;
+                decisionTree[currentBranch][currentAction] = action2;
 
                 if(currentAction>maxActions)
                     maxActions = currentAction;
@@ -177,4 +205,28 @@ public class DecisionTreePanel extends JPanel
 
 
     }
+
+    public void setSelected(int row, int col){
+        selectedRow = row;
+        selectedCol = col;
+    }
+
+    class Position{
+        int row;
+        int col;
+
+        public Position(int nrow, int ncol){
+            row=nrow;
+            col = ncol;
+        }
+
+        public int getRow() {
+            return row;
+        }
+
+        public int getCol() {
+            return col;
+        }
+    }
+
 }
